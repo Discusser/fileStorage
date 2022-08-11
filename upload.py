@@ -27,7 +27,7 @@ def upload():
     os.system("git remote set-url origin git@github.com:Discusser/fileStorage.git")
     os.system("git fetch --all")
     # Make sure that the local repo is always up to date
-    os.system("git checkout origin/main -- README.md run.bat upload.pyw .gitignore")
+    os.system("git checkout origin/main -- README.md run.bat upload.py .gitignore")
     os.system("git add files")
     os.system("git commit -m \"Add file '" + fullFilename + "' (via Python)\"")
     os.system("git push -u origin main")
