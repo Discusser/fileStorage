@@ -32,6 +32,8 @@ def upload():
     os.system("git commit -m \"Add file '" + fullFilename + "' (via Python)\"")
     os.system("git push -u origin main")
     os.system("git update-index --assume-unchanged \"" + fullPath + "\"")
+    
+    print("Uploaded file at https://github.com/Discusser/fileStorage/blob/main/files/2022-10/" + fullFilename)
 
 
 if __name__ == '__main__':
