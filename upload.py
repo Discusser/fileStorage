@@ -3,6 +3,7 @@ import os
 import random
 import string
 import sys
+import pyperclip
 from datetime import date
 
 
@@ -33,7 +34,11 @@ def upload():
     os.system("git push -u origin main")
     os.system("git update-index --assume-unchanged \"" + fullPath + "\"")
     
-    print("Uploaded file at https://github.com/Discusser/fileStorage/blob/main/files/2022-10/" + fullFilename)
+    link = "https://raw.githubusercontent.com/Discusser/fileStorage/main/files/" + formattedDate + "/" + fullFilename.replace(" ", "%20")
+    
+    print("Uploaded file at link " + link)
+    pyperclip.copy(link)
+    print("Copied link to clipboard")
 
 
 if __name__ == '__main__':
