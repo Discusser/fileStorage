@@ -43,7 +43,8 @@ def upload():
             pyperclip.copy(link)
             print("Copied link to clipboard")
     except IndexError:
-        pass
+        pyperclip.copy(link)
+        print("Copied link to clipboard")
 
 
 if __name__ == '__main__':
