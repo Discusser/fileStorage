@@ -18,8 +18,9 @@ def upload():
         randomName += random.choice(characters)
     now = datetime.datetime.now()
     today = date.today()
+    formattedDate = ("%04d-%02d" % (today.year, today.month))
     filename = randomName + " " + today.isoformat() + " " + ("%02d" % now.hour) + "h" + ("%02d" % now.minute)
-    _dir = os.getcwd() + "\\files\\" + ("%04d-%02d" % (today.year, today.month)) + "\\"
+    _dir = os.getcwd() + "\\files\\" + formattedDate + "\\"
     if not os.path.exists(_dir):
         os.makedirs(_dir)
     fullFilename = filename + os.path.splitext(argv)[1]
