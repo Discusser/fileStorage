@@ -38,8 +38,9 @@ def upload():
     link = "https://raw.githubusercontent.com/Discusser/fileStorage/main/files/" + formattedDate + "/" + fullFilename.replace(" ", "%20")
     
     print("Uploaded file at link " + link)
-    pyperclip.copy(link)
-    print("Copied link to clipboard")
+    if not sys.argv[2].__includes__("copyLink=false"):
+        pyperclip.copy(link)
+        print("Copied link to clipboard")
 
 
 if __name__ == '__main__':
