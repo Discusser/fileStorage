@@ -39,7 +39,7 @@ def upload():
     
     print("Uploaded file at link " + link)
     try:
-        if not sys.argv[2].__includes__("copyLink=false"):
+        if not sys.argv[2] == "copyLink=false":
             pyperclip.copy(link)
             print("Copied link to clipboard")
     except IndexError:
