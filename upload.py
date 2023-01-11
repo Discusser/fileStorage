@@ -34,7 +34,6 @@ def upload():
     os.system("git commit -m \"Add file '" + fullFilename + "' (via Python)\"")
     os.system("git push -u origin main")
     os.system("git update-index --assume-unchanged \"" + fullPath + "\"")
-    os.remove(fullPath);
     
     link = "https://raw.githubusercontent.com/Discusser/fileStorage/main/files/" + formattedDate + "/" + fullFilename.replace(" ", "%20")
     
